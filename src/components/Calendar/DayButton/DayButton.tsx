@@ -6,7 +6,6 @@ function DayButton({
 	variant = "default",
 	onClick,
 	disabled = false,
-	icon,
 }: DayButtonProps) {
 	return (
 		<StyledDayButton
@@ -14,7 +13,6 @@ function DayButton({
 			onClick={!disabled ? onClick : undefined}
 			disabled={disabled}
 		>
-			{icon && <span style={{ marginRight: 8 }}>{icon}</span>}
 			{day}日
 		</StyledDayButton>
 	);
