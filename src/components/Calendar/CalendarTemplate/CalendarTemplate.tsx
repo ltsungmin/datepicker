@@ -1,6 +1,6 @@
 import React from "react";
 import CalendarMonth from "../CalendarMonth/CalendarMonth";
-import { CalendarTemplateProps } from "../../../type/index"
+import { CalendarTemplateProps } from "../../../type/index";
 
 function CalendarTemplate(props: CalendarTemplateProps) {
 	const { currentDate, setCurrentDate } = props;

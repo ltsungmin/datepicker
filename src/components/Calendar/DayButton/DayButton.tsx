@@ -1,5 +1,5 @@
 import { StyledDayButton } from "./styles";
-import { DayButtonProps } from "../../../type/index"
+import { DayButtonProps } from "../../../type/index";
 
 function DayButton({
 	day,

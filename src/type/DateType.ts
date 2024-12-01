@@ -20,5 +20,4 @@ export interface DayButtonProps {
 	variant?: "default" | "today" | "selected" | "disabled";
 	onClick?: () => void;
 	disabled?: boolean;
-	icon?: React.ReactNode; // 顯示額外圖標
 }

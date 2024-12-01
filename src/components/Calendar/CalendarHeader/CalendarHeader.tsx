@@ -4,7 +4,7 @@ import {
 	MouthSelectButton,
 	CalenderHeader,
 } from "./styles";
-import { CalendarHeaderProps } from "../../../type/index"
+import { CalendarHeaderProps } from "../../../type/index";
 
 function CalendarHeader({
 	currentDate,
@@ -12,8 +12,6 @@ function CalendarHeader({
 	handleNextMonth,
 }: CalendarHeaderProps) {
 	const { year, month } = currentDate;
-
-	console.log(handlePrevMonth)
 
 	return (
 		<CalenderHeader>

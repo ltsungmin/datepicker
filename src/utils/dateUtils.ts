@@ -1,5 +1,3 @@
-// utils/dateUtils.ts
-
 // 獲取某月的總天數
 export const getDaysInMonth = (year: number, month: number): number => {
 	return new Date(year, month, 0).getDate();

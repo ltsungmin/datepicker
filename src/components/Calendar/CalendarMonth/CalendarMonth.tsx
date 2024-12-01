@@ -30,7 +30,6 @@ function MonthCalendar(props: any) {
 	const lastDayOfMonth = getLastDayOfMonth(currentYear, currentMonth);
 
 	const handlePrevMonth = () => {
-		console.log(currentDate)
 		setCurrentDate((prev: DateType) => {
 			const prevYear = prev.month === 1 ? prev.year - 1 : prev.year;
 			const prevMonth = prev.month === 1 ? 12 : prev.month - 1;
@@ -159,8 +158,6 @@ function MonthCalendar(props: any) {
 	const selectEndDate = (date: DateType) => {
 		setEndDate(date);
 	};
-
-	console.log(startDate, endDate);
 
 	return (
 		<CalendarContainer>
