@@ -1,3 +1,3 @@
-import { ButtonBase, CalendarButton } from "./ButtonBase";
+import { ButtonBase, CalendarButton } from "./styles";
 
 export { ButtonBase, CalendarButton };

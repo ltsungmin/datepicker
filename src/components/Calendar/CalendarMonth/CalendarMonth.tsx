@@ -116,30 +116,32 @@ function MonthCalendar(props: any) {
 	const handleDateClick = (date: DateType) => {
 		setClickCount((prevClickCount) => {
 			// 點擊次數在 0-2 間循環
-			const newClickCount = (prevClickCount + 1) % 3;
+			let newClickCount = (prevClickCount + 1) % 3;
 
-			switch (newClickCount) {
-				case 0:
-					// 第三次點擊：清空選擇範圍
-					resetSelection();
-					break;
-				case 1:
-					// 第一次點擊：設置 startDate
-					selectStartDate(date);
-					break;
-				case 2:
-					// 第二次點擊：設置 endDate
-					if (startDate && isBefore(date, startDate)) {
-						// 如果第二次點擊日期早於第一次，重置選擇
+			setTimeout(() => {
+				switch (newClickCount) {
+					case 0:
+						// 第三次點擊：清空選擇範圍
 						resetSelection();
-						// 歸零點擊次數
-						return 0;
-					}
-					selectEndDate(date);
-					break;
-				default:
-					break;
-			}
+						break;
+					case 1:
+						// 第一次點擊：設置 startDate
+						selectStartDate(date);
+						break;
+					case 2:
+						// 第二次點擊：設置 endDate
+						if (startDate && isBefore(date, startDate)) {
+							resetSelection();
+							// 重置點擊次數
+							newClickCount = 0;
+						} else {
+							selectEndDate(date);
+						}
+						break;
+					default:
+						break;
+				}
+			}, 0);
 
 			return newClickCount;
 		});
@@ -148,6 +150,7 @@ function MonthCalendar(props: any) {
 	const resetSelection = () => {
 		setStartDate(null);
 		setEndDate(null);
+		setClickCount(0);
 	};
 
 	const selectStartDate = (date: DateType) => {

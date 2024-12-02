@@ -16,7 +16,7 @@ function CalendarHeader({
 	return (
 		<CalenderHeader>
 			<ArrowLeftButton onClick={handlePrevMonth} />
-			<MouthSelectButton>
+			<MouthSelectButton type="normal">
 				{year}年 {month}月
 			</MouthSelectButton>
 			<ArrowRightButton onClick={handleNextMonth} />

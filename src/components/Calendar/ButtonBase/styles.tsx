@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import { COLOR_WHITE, COLOR_BLACK, COLOR_GRAY } from "../../../constants/theme";
 
-export const ButtonBase = styled.button`
+export const ButtonBase = styled.button<{ type: string }>`
 	border: none;
 	background: ${COLOR_WHITE};
-	cursor: pointer;
 	padding: 9px 10px;
 	border-radius: 2px;
 	transition: all 300ms;
+	cursor: ${({ type }) => (type === "normal" ? "default" : "pointer")};
 	&:hover {
-		background-color: ${COLOR_GRAY};
+		background-color: ${({ type }) =>
+			type === "normal" ? COLOR_WHITE : COLOR_GRAY};
 	}
 `;
 
